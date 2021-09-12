@@ -22,7 +22,7 @@ namespace Xeptions
             : base(message, innerException)
         { }
 
-        public void UpsertDataList(string key, string value)
+        public Xeption UpsertDataList(string key, string value)
         {
             if (this.Data.Contains(key))
             {
@@ -32,6 +32,8 @@ namespace Xeptions
             {
                 this.Data.Add(key, new List<string> { value });
             }
+
+            return this;
         }
 
         public void ThrowIfContainsErrors()

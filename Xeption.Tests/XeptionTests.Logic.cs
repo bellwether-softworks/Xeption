@@ -70,8 +70,9 @@ namespace Xeptions.Tests
             // when
             foreach (string key in randomDictionary.Keys)
             {
-                randomDictionary[key].ForEach(value =>
-                    xeption.UpsertDataList(key, value));
+                randomDictionary[key].ForEach(value => {
+                    xeption = xeption.UpsertDataList(key, value);
+                });
             }
 
             ICollectionDictionary actualDictionary = xeption.Data;
